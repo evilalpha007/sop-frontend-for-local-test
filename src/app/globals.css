@@ -1,0 +1,277 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --data-margin-top: 0;
+}
+
+@layer base {
+  /* Scrollbar hide start */
+  .hide-scrollbar {
+    -ms-overflow-style: none !important; /* for Internet Explorer, Edge */
+    scrollbar-width: none !important; /* for Firefox */
+    overflow-y: scroll !important;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none !important; /* for Chrome, Safari, and Opera */
+  }
+  /* Scrollbar hide end */
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body,
+  div,
+  section,
+  header,
+  footer,
+  nav,
+  aside,
+  article,
+  main,
+  img,
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  span,
+  a,
+  ul,
+  ol,
+  li,
+  table,
+  th,
+  td,
+  form,
+  input,
+  button,
+  select,
+  option,
+  textarea,
+  html,
+  body {
+    @apply scroll-smooth font-raleway font-normal leading-normal text-theme-off-white;
+  }
+
+  html,
+  body {
+    @apply w-full max-w-full bg-theme-black;
+  }
+
+  .transition-linear {
+    @apply transition-all duration-300 ease-linear;
+  }
+}
+
+/* react slick */
+ul.slick-dots.slick-thumb li {
+  width: 150px !important;
+  height: 100px !important;
+}
+
+@media screen and (max-width: 768px) {
+  ul.slick-dots.slick-thumb li {
+    width: 80px !important;
+    height: 50px !important;
+  }
+}
+
+/* modal image slider */
+.modalImageSlider .slick-dots {
+  position: absolute !important;
+  bottom: 5% !important;
+}
+.modalImageSlider .slick-dots button:before {
+  font-size: 15px;
+  opacity: 0.6 !important;
+  color: #ffffff;
+}
+
+.modalImageSlider .slick-dots li.slick-active button:before {
+  opacity: 1 !important;
+  color: #a38866;
+}
+
+.modalImageSlider2 .slick-dots {
+  position: absolute !important;
+  bottom: 10% !important;
+}
+.modalImageSlider2 .slick-dots li {
+  width: 80px !important;
+}
+.modalImageSlider2 .slick-dots li.slick-active button:before {
+  opacity: 1 !important;
+  color: #a38866;
+  display: none;
+}
+
+.dubaiMarinaSlider ul.slick-dots.slick-thumb li {
+  width: 60px !important;
+  height: 40px !important;
+}
+
+@media screen and (max-width: 640px) {
+  .dubaiMarinaSlider ul.slick-dots.slick-thumb li {
+    width: 40px !important;
+    height: 30px !important;
+  }
+}
+/* Fade in up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bottomToTopZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bottomToTopZoomOut {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+}
+
+.animate-modal {
+  animation: bottomToTopZoom 0.5s ease-out forwards;
+}
+
+.animate-modal-close {
+  animation: bottomToTopZoomOut 0.5s ease-out forwards;
+}
+
+/* Define animations */
+.animate-menu {
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+}
+.animate-submenu {
+  transition:
+    max-height 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* react tell input */
+.react-tel-input .form-control {
+  width: 100%;
+  padding: 10px;
+  border-radius: 0px !important;
+  border: 1px solid #ddd;
+  background: #141213 !important;
+  padding-left: 45px !important;
+  color: #ffffff !important;
+}
+.react-tel-input .flag-dropdown.open .selected-flag {
+  background: #141213 !important;
+  border-radius: 0px 0 0 0;
+}
+.react-tel-input .country-list .country {
+  padding: 7px 9px;
+  background: #141213 !important;
+  color: #ffffff !important;
+}
+.react-tel-input .selected-flag {
+  outline: none;
+  position: relative;
+  width: 38px;
+  height: 100%;
+  padding: 0 0 0 8px;
+  border-radius: 0px 0 0 3px;
+  background: #141213 !important;
+}
+.react-tel-input {
+  height: 45px;
+}
+input.form-control {
+  height: 45px !important;
+}
+.contactFromPhone .react-tel-input .form-control {
+  color: #ffffff !important;
+}
+
+.contactFromPhone .react-tel-input .selected-flag {
+  background: #232122 !important;
+}
+.contactFromPhone .react-tel-input {
+  height: 46px;
+  background: #232122 !important;
+}
+.contactFromPhone input.form-control {
+  height: 46px !important;
+  background: #232122 !important;
+}
+
+::-webkit-scrollbar {
+  width: 10px; /* Reduced width */
+}
+
+::-webkit-scrollbar-track {
+  background: #e6d3bc; /* Lighter, complementary color to the scrollbar */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c7a57a; /* Specified color */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b68f66; /* Slightly darker shade for hover state */
+}
+
+.PhoneInputInput {
+  background: #232122 !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.PhoneInputCountrySelect option {
+  color: black !important;
+}
+
+/* Add this to your global CSS file */
+.slider-container .slick-track {
+  display: flex !important;
+}
+
+.slider-container .slick-slide {
+  height: inherit !important;
+  display: flex !important;
+}
+
+.slider-container .slick-slide > div {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.select-none{
+    -webkit-user-select: all;
+    -moz-user-select: all;
+    user-select: all;
+}

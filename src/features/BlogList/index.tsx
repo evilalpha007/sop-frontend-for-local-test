@@ -1,0 +1,44 @@
+import { getBlogList } from "@/api/get-blog-list";
+import Typography from "@/components/elements/texts/Typography";
+import SmallBlogCard from "../SmallBlogCard";
+
+const BlogList = async ({ country = "uae" }: { country?: string }) => {
+  const { blogListData } = await getBlogList({ country });
+
+  return (
+    <div>
+      <div className="mx-auto mb-[42px] w-full max-w-[551px]">
+        <Typography
+          as="h2"
+          className="md-[10px] text-center text-sm font-medium uppercase text-theme-off-white sm:mb-4 md:mb-7 md:text-[32px]"
+        >
+          All Blogs
+        </Typography>
+        <Typography
+          as="p"
+          className="text-center text-[12px] font-medium leading-4 text-theme-off-white text-opacity-80 md:text-lg md:leading-[26px]"
+        >
+          Latest available blogs
+        </Typography>
+      </div>
+
+      <div className="grid h-full gap-[18px] md:grid-cols-2 lg:grid-cols-2">
+        {blogListData?.map((blog, index) => (
+          <SmallBlogCard
+            key={index}
+            title={blog?.title}
+            description={blog?.description}
+            alt={blog?.title}
+            author_name={blog?.author_name || "N/A"}
+            date={blog?.published_date}
+            image={blog?.feature_image}
+            slug={blog?.slug}
+            country={country}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default BlogList;
